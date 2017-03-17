@@ -8,8 +8,7 @@
 
 ## Preparing an Auth0 client for the management API
 1. Create a non-interactive client.
-2. Authorize the non-interactive client you created in Auth0 Management API's Non Interactive Clients section.
-3. Authorize the non-interactive client for Auth0 management API.
+2. Authorize the client you created in the previous step under the Auth0 Management API's Non Interactive Clients tab. You will need to grant the following scopes: `read:clients`, `read:client_keys`, `read:rules`.
 
 ## Configuring locally
 1. Set your SPA client's ID and your domain in `frontend/src/views/Main/routes.js`.
@@ -33,3 +32,4 @@ $ npm run build
 $ docker-compose up
 ```
 2. The viewer will now be running on `http://localhost/`.
+
