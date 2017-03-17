@@ -16,6 +16,17 @@
 2. Set your non-interactive client's token URL, `client_id`, `client_secret`, and `audience` in `api/config.py`.
 Your token URL is your domain followed by /oauth/token, e.g.: `http://username.eu.auth0.com/oauth/token`.
 
+## Building the viewer
+1. Change directory into `rules/frontend`.
+2. Install the necessary dependencies from `package.json` via `npm`:
+```
+$ npm install
+```
+3. Build:
+```
+$ npm run build
+```
+
 ## Running the viewer
 1. Start the Docker container with docker-compose:
 ```
