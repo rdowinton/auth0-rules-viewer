@@ -1,0 +1,10 @@
+version: '2'
+services:
+  rules:
+    build: rules
+    image: rules
+    ports:
+      - "80:80"
+    volumes:
+      - ./rules/api:/api
+      - ./rules/frontend/dist:/var/www
