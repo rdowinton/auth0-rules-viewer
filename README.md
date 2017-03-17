@@ -32,4 +32,3 @@ $ npm run build
 $ docker-compose up
 ```
 2. The viewer will now be running on `http://localhost/`.
-
