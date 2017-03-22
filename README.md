@@ -12,7 +12,7 @@
 
 ## Configuring locally
 1. Set your SPA client's ID and your domain in `frontend/src/views/Main/routes.js`.
-2. Set your non-interactive client's token URL, `client_id`, `client_secret`, and `audience` in `api/config.py`.
+2. Set your domain as well as your non-interactive client's `client_id`, `client_secret`, and `audience` in `api/config.py`.
 Your token URL is your domain followed by /oauth/token, e.g.: `http://username.eu.auth0.com/oauth/token`.
 
 ## Building the viewer
