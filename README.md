@@ -11,8 +11,8 @@
 2. Authorize the client you created in the previous step under the Auth0 Management API's Non Interactive Clients tab. You will need to grant the following scopes: `read:clients`, `read:client_keys`, `read:rules`.
 
 ## Configuring locally
-1. Set your SPA client's ID and your domain in `frontend/src/views/Main/routes.js`.
-2. Set your domain as well as your non-interactive client's `client_id`, `client_secret`, and `audience` in `api/config.py`.
+1. Set your SPA client's ID and your domain in `rules/frontend/.env`.
+2. Set your domain as well as your non-interactive client's `client_id`, `client_secret`, and `audience` in `rules/api/config.py`.
 
 ## Building the viewer
 1. Change directory into `rules/frontend`.
