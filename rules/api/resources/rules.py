@@ -1,3 +1,4 @@
+import logging
 import re
 from flask_restful import Resource
 from common.auth0 import Auth0
@@ -20,9 +21,11 @@ class Rules(Resource):
         rules = {rule['id']: rule['name'] for rule in rules}
         # Can't serialize set to JSON, so convert to list first
         client_rules = {client: list(rules) for client, rules in client_rules.items()}
-        print(clients)
-        print(rules)
-        print(client_rules)
+        
+        logging.info('Clients: %s' % str(clients))
+        logging.info('Rules: %s' % str(rules))
+        logging.info('Client rules: %s' % str(client_rules))
+        
         return jsonify({
             'clients': clients,
             'rules': rules,
@@ -62,7 +65,7 @@ class Rules(Resource):
             if name in names_ids:
                 client_ids.add(names_ids[name])
             else:
-                print('Unknown application: ' + name)
+                logging.info('Unknown application: ' + name)
 
         return client_ids
 
@@ -70,7 +73,6 @@ class Rules(Resource):
     def get_client_rules(clients, rules):
         client_rules = {}
         for rule in rules:
-            print('Ids for rule ' + rule['name'] + ':')
             client_ids = Rules.extract_from_rule(rule['script'], clients)
             for client in client_ids:
                 if client not in client_rules:
