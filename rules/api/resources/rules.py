@@ -1,14 +1,14 @@
 import re
 from flask_restful import Resource
 from common.auth0 import Auth0
-from config import TOKEN_URL, TOKEN_INFO
+from config import USER_DOMAIN, TOKEN_URL, TOKEN_INFO
 from flask_restful.utils import cors
 from flask.json import jsonify
 
 
 class Rules(Resource):
-    CLIENTS_URL = 'https://rdowinton.eu.auth0.com/api/v2/clients'
-    RULES_URL = 'https://rdowinton.eu.auth0.com/api/v2/rules'
+    CLIENTS_URL = USER_DOMAIN + '/api/v2/clients'
+    RULES_URL = USER_DOMAIN + '/api/v2/rules'
 
     @cors.crossdomain(origin='*')
     def get(self):
